@@ -1,0 +1,23 @@
+---
+- hosts: all
+  gather_facts: no
+  vars:
+    spec_vars_dir:  "{{playbook_dir}}/spec_vars"
+    host_vars_path: "{{spec_vars_dir}}/hostvars_{{inventory_hostname}}.yml"
+  tasks:
+   - name: create "{{spec_vars_dir}}" directory
+     file:
+       path: "{{spec_vars_dir}}"
+       state: directory 
+     delegate_to: localhost
+   - name: "dump_variables hostvars to yml"
+     template:
+       src: templates/dump_variables.j2
+       dest: "{{host_vars_path}}"
+     delegate_to: localhost
+   - name: rake serverspec with hostvars
+     shell: HOST_VARS_PATH={{host_vars_path}} rake serverspec:{{spec_role}}
+     register: raw_result
+     delegate_to: localhost
+   - name: stdout of serverspec
+     debug: var=raw_result.stdout_lines
