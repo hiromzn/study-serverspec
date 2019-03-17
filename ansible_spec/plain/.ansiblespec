@@ -1,0 +1,4 @@
+---
+-
+  playbook: spec.yml
+  inventory: hosts

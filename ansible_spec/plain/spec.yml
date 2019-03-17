@@ -1,0 +1,12 @@
+---
+- hosts: all
+  gather_facts: no
+  vars:
+    my_name: "/etc/group"
+  tasks:
+   - name: serverspec
+     shell: rake serverspec:{{spec_role}}
+     register: raw_result
+     delegate_to: localhost
+   - name: stdout of serverspec
+     debug: var=raw_result.stdout_lines
