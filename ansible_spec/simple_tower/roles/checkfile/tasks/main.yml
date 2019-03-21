@@ -13,7 +13,8 @@
 #  shell: rake -AT
   
 - name: do serverspec
-  shell: PATH="/home/hmizuno/.rbenv/bin:$PATH" /home/hmizuno/.rbenv/shims/rake serverspec:CHECK
+  shell: /tmp/RUNRUN
+  #shell: PATH="/home/hmizuno/.rbenv/bin:$PATH" /home/hmizuno/.rbenv/shims/rake serverspec:CHECK
   #shell: SUDO_PASSWORD=Hiromizuno1-- /home/hmizuno/.rbenv/shims/rake serverspec:CHECK
   register: raw_result
 
