@@ -20,7 +20,7 @@
      delegate_to: localhost
 
    - name: check variable
-     shell: echo "playbook var: {{pb_var_file_name}}, hostvar: {{host_var_file_name}}"
+     shell: ls {{pb_var_file_name}} {{host_var_file_name}}
      register: raw_res1
 
    - name: stdout of echo
