@@ -12,7 +12,8 @@
 #  shell: rake -AT
   
 - name: do serverspec
-  shell: SUDO_PASSWORD=Hiromizuno1-- /home/hmizuno/.rbenv/shims/rake serverspec:CHECK
+  shell: /home/hmizuno/.rbenv/shims/rake serverspec:CHECK
+  #shell: SUDO_PASSWORD=Hiromizuno1-- /home/hmizuno/.rbenv/shims/rake serverspec:CHECK
   register: raw_result
 
 - name: stdout of serverspec
