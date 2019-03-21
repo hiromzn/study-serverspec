@@ -1,5 +1,5 @@
 - name: CHECK
-  hosts: server
+  hosts: all
   user: hmizuno
   vars:
     myfname: /etc/passwd

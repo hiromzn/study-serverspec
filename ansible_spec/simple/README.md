@@ -3,6 +3,15 @@
 - ansible-sample-tdd
   - URL: https://github.com/volanja/ansible-sample-tdd
 
+# install
+
+```
+gem install serverspec
+gem install ansible_spec
+gem install rake
+gem install rspec
+```
+
 # prepare
 
 - auto login
@@ -16,6 +25,10 @@
 # run from ansible
 ########################
 $ ansible-playbook -i host site.yml
+
+or
+
+$ SUDO_PASSWORD=XXXXXXX ansible-playbook -i host site.yml
 
 ########################
 # run from serverspec
