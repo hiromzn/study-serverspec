@@ -2,7 +2,8 @@
 # Nginx
 
 - name: check file information
-  shell: grep "{{ fcont }}" {{ myfname }} /dev/null
+  #shell: grep "{{ fcont }}" {{ myfname }} /dev/null
+  shell: echo "$PATH"
   register: raw_result
 
 - name: stdout of file info.
