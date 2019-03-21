@@ -7,8 +7,10 @@ hostvars = YAML.load_file(ENV['HOST_VARS_PATH'])
 namespace :serverspec do
   desc "Run serverspec for #{hostvars["spec_role"]}"
   RSpec::Core::RakeTask.new(hostvars["spec_role"].to_sym) do |t|
-    t.rspec_opts = ['-f j'] 
-    # -f j
+    t.rspec_opts = ['-f d'] 
+    # format option:
+    # -f j # json
+    # -f d # document
     t.pattern = "spec/#{hostvars["spec_role"]}/*_spec.rb"
   end
 end
