@@ -4,11 +4,11 @@ require 'spec_helper'
   #its(:stdout) { should contain( "#{property['inventory_hostname']}" ) }
 #end
 
-#describe file( property["my_name"] ) do # sample of playbook variable
+#describe file( property["pb_var_file_name"] ) do # sample of playbook variable
   #it { should be_file }
 #end
 
-describe file( property["check_file_name"] ) do # sample of inventory variable
+describe file( property["host_var_file_name"] ) do # sample of inventory variable
   it { should be_file }
 end
 
