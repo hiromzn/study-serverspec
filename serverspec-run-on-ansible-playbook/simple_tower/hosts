@@ -1,0 +1,5 @@
+[centos]
+myansible spec_role=BBB ansible_host=localhost
+
+[centos:vars]
+check_file_name=/etc/hosts
