@@ -1,0 +1,19 @@
+---
+# Nginx
+
+- name: check file information
+  shell: grep "{{ fcont }}" {{ myfname }} /dev/null
+  register: raw_result
+
+- name: stdout of file info.
+  debug: var=raw_result.stdout_lines
+
+#- name: do rake -AT
+#  shell: rake -AT
+  
+- name: do serverspec
+  shell: /home/hmizuno/.rbenv/shims/rake serverspec:CHECK
+  register: raw_result
+
+- name: stdout of serverspec
+  debug: var=raw_result.stdout_lines

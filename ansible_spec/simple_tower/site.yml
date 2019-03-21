@@ -1,0 +1,10 @@
+- name: CHECK
+  hosts: all
+  user: hmizuno
+  vars:
+    myfname: /etc/passwd
+    fcont: hmizuno
+    #myfname: /etc/hostsXXX
+  roles:
+    - checkfile
+
